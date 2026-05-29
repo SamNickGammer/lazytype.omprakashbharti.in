@@ -1,0 +1,4 @@
+interface:
+  display_name: "LazyType Release"
+  short_description: "Prepare and publish LazyType semver releases."
+  default_prompt: "Prepare a new LazyType release."
