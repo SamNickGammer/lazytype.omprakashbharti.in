@@ -339,12 +339,13 @@ function Kbd({ children }: { children: React.ReactNode }) {
 
 function BrandMark() {
   return (
-    <span
-      aria-hidden
-      className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-brand to-brand-light font-display text-sm font-black text-white"
-    >
-      L
-    </span>
+    <img
+      src="/logo.png"
+      alt="LazyType logo"
+      width={28}
+      height={28}
+      className="h-7 w-7 rounded-lg"
+    />
   );
 }
 
