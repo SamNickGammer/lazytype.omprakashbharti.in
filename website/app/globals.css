@@ -11,15 +11,48 @@ html {
 }
 
 body {
-  @apply bg-neutral-950 text-neutral-100 antialiased;
+  @apply bg-ink text-[#ECEAF5] antialiased;
+  /* Faint violet aurora fixed behind everything, plus a hairline dot grid. */
+  background-image:
+    radial-gradient(60rem 40rem at 50% -10%, rgba(107, 92, 245, 0.18), transparent 60%),
+    radial-gradient(40rem 30rem at 85% 20%, rgba(67, 224, 216, 0.08), transparent 60%),
+    radial-gradient(45rem 35rem at 10% 40%, rgba(168, 85, 247, 0.1), transparent 60%);
+  background-attachment: fixed;
 }
 
-/* Subtle animated grain-free brand glow used behind the hero. */
-.brand-glow {
-  background: radial-gradient(
-    600px circle at 50% 0%,
-    rgba(107, 92, 245, 0.35),
-    rgba(168, 85, 247, 0.12) 40%,
-    transparent 70%
-  );
+@layer components {
+  /* Frosted panel used for cards and the nav. */
+  .glass {
+    @apply border border-white/[0.08] bg-white/[0.03] backdrop-blur-xl;
+  }
+
+  /* Monospace utility lettering — the "typed output" voice of the UI. */
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.22em] text-lavender;
+  }
+
+  /* The big violet→orchid→teal text wash used on key words. */
+  .text-wash {
+    @apply bg-gradient-to-r from-brand via-brand-light to-voice bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  /* Hairline dot grid overlay for sections that need texture. */
+  .dotgrid {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+}
+
+/* Honor reduced-motion: kill ambient + transition motion site-wide. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
