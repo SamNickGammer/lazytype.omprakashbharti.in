@@ -105,6 +105,12 @@ defaults delete in.omprakashbharti.lazytype context_request_timeout_seconds
 
 </details>
 
+## Website
+
+The marketing site lives in [`website/`](website) — a Next.js 14 app with a
+voice-reactive WebGL orb hero. See [website/README.md](website/README.md) for
+local development and deployment instructions.
+
 ## License
 
 Licensed under the MIT license. See [LICENSE](LICENSE) for the full text, including the original copyright notice that the MIT license requires to be preserved.
